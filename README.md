@@ -3,7 +3,7 @@
 ステップ１
 
 ```
-git clone https://github.com/tech-quest/docker-template.git
+git clone https://github.com/tech-quest/blog_modal.git
 ```
 
 ステップ２
