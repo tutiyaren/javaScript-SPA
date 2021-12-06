@@ -1,3 +1,5 @@
 <?php 
-print phpinfo();
+
+header('Location: http://localhost:8080/');
+exit();
 ?>
