@@ -1,11 +1,6 @@
-const createBlog = document.querySelector('.addBlog');
 const newBlog = document.querySelector('.new_blog');
 const form = document.querySelector('.form');
 const main = document.querySelector('.main');
-
-createBlog.addEventListener('click', (event) => {
-    alert('click');
-})
 
 newBlog.addEventListener('click', (event) => {
     form.classList.add('block_form');
@@ -14,9 +9,18 @@ newBlog.addEventListener('click', (event) => {
 });
 
 const fetchBlogs = async() => {
-    // const blogLists = [];
-    const blogList = document.querySelector('.blog_list');
-    blogList.innerHTML = "<p>記事はありません</p>";
+    const blogData = await fetch('http://localhost:8080/blogList.php');
+    return blogData.json();
 }
 
-fetchBlogs();
+const blogOutput = async() => {
+    const blogs = await fetchBlogs();
+    const blogList = document.querySelector('.blog_list');
+    if (blogs.length === 0) return blogList.innerHTML = "<p>記事はありません</p>";
+    blogs.map(({title, content}) => {
+        blogList.insertAdjacentHTML('beforeend', `<div class='blog_content'><p class='mb-0 font-weight'>タイトル</p><p class='mt-0'>${title}</p><p class='mb-0 font-weight'>内容</p><p class='mt-0'>${content}</p></div>`);
+    })
+
+}
+
+blogOutput();
