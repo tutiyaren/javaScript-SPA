@@ -3,7 +3,7 @@
 ステップ１
 
 ```
-git clone https://github.com/tech-quest/docker-template.git
+git clone https://github.com/tech-quest/blog_modal.git
 ```
 
 ステップ２
@@ -37,3 +37,12 @@ localhost:3306
 ```
 localhost:8080をhtmlが表示されるようにしたい -> nginx/default.conf 4行目を index index.htmlにする。
 ```
+
+# DB作成
+
+```
+CREATE DATABASE blog;
+
+CREATE TABLE blogs ( id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT, title varchar(255) NOT NULL, content text NOT NULL, created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, updated_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP );
+```
+
