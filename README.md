@@ -3,7 +3,7 @@
 ステップ１
 
 ```
-git clone https://github.com/tech-quest/blog_modal.git
+git clone git@github.com:tech-quest/blog_modal.git
 ```
 
 ステップ２
@@ -22,15 +22,11 @@ docker-compose up --build
 
 php
 
-```
-localhost:8080
-```
+[localhost:8080](http://localhost:8080)
 
-myadmin
+PHPMyAdmin
 
-```
-localhost:3306
-```
+[localhost:3306](http://localhost:3306)
 
 # 設定を変更したい
 
