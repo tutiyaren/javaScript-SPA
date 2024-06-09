@@ -19,7 +19,7 @@
     </header>
     <h1>ブログアプリ</h1>
     <div class="form_parent">
-        <form class="form none_form" action="./store.php" method="post">
+        <form class="form none_form" id="createForm" action="./store.php" method="post">
             <p><span>ブログタイトル</span></p>
             <p><input class="contents" type="text" name="title"></p>
             <p><span>ブログ本文</span></p>
@@ -27,6 +27,17 @@
             <button class="addBlog">投稿</button>
             <button class="return">戻る</button>
         </form>
+
+        <form class="form none_form" id="editForm" action="./update.php" method="post">
+            <input type="hidden" name="id" id="editId">
+            <p><span>ブログタイトル</span></p>
+            <p><input class="contents" type="text" name="title" id="editTitle"></p>
+            <p><span>ブログ本文</span></p>
+            <p><textarea class="contents content" name="content" id="editContent"></textarea></p>
+            <button class="updateBlog">投稿</button>
+            <button class="return">戻る</button>
+        </form>
+
         <div class="article_list main">
             <h2>記事一覧</h2>
             <div class="blog_list"></div>
